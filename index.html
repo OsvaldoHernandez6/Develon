@@ -180,26 +180,29 @@
     .obj-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:var(--green-soft);color:var(--teal);}
 
     /* LinkedIn Ad card (simulated feed) */
-    .li-ad-card{border:1px solid var(--line);border-radius:var(--r-md);background:#fff;overflow:hidden;display:flex;flex-direction:column;}
+    .li-ad-card{border:1px solid #e0e0e0;border-radius:10px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
     .li-ad-header{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;}
-    .li-ad-avatar{width:42px;height:42px;border-radius:6px;object-fit:contain;background:#f3f2ef;border:1px solid var(--line);padding:4px;flex-shrink:0;}
+    .li-ad-avatar{width:42px;height:42px;border-radius:6px;object-fit:contain;background:#f3f2ef;border:1px solid #e0e0e0;padding:4px;flex-shrink:0;}
     .li-ad-company{flex:1;min-width:0;}
     .li-ad-company-name{font-size:13px;font-weight:700;color:#1a1a1a;line-height:1.2;}
     .li-ad-promo{font-size:11px;color:#666;display:flex;align-items:center;gap:4px;margin-top:2px;}
-    .li-ad-promo::before{content:"Promocionado";font-size:11px;color:#666;}
-    .li-ad-promo-dot{width:3px;height:3px;border-radius:50%;background:#666;}
-    .li-ad-globe{font-size:10px;}
-    .li-ad-copy{padding:0 16px 14px;font-size:13px;line-height:1.6;color:#1a1a1a;white-space:pre-line;}
+    .li-ad-promo::before{content:"Promocionado · 🌐";font-size:11px;color:#666;}
+    .li-ad-copy{padding:0 16px 10px;font-size:13px;line-height:1.6;color:#1a1a1a;white-space:pre-line;}
+    .li-ad-creative{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f3f2ef;}
+    .li-ad-creative-wrap{position:relative;overflow:hidden;}
+    .li-ad-creative-badge{position:absolute;top:8px;right:8px;padding:3px 9px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;background:rgba(0,0,0,0.55);color:#fff;backdrop-filter:blur(4px);}
     .li-ad-footer{border-top:1px solid #e0e0e0;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
     .li-ad-cta{padding:7px 16px;border-radius:4px;font-size:13px;font-weight:700;color:#0A66C2;border:1.5px solid #0A66C2;background:#fff;cursor:default;}
-    .li-ad-tags{display:flex;flex-wrap:wrap;gap:4px;padding:0 16px 12px;}
-    .li-ad-group{margin-bottom:24px;}
-    .li-ad-group-header{padding:14px 18px;border-radius:var(--r-md) var(--r-md) 0 0;margin-bottom:1px;}
-    .li-ad-group-header.green{background:var(--green-soft);border:1px solid rgba(29,158,117,0.2);}
-    .li-ad-group-header.accent{background:var(--accent-soft);border:1px solid rgba(183,79,42,0.2);}
-    .li-ad-group-header.purple{background:var(--purple-soft);border:1px solid rgba(83,74,183,0.2);}
-    .li-ad-group-header.gold{background:var(--gold-soft);border:1px solid rgba(213,155,49,0.2);}
-    .li-ad-group-header.muted{background:rgba(37,26,23,0.04);border:1px solid var(--line);}
+    .li-ad-tags{display:flex;flex-wrap:wrap;gap:4px;padding:8px 16px;}
+    .li-ad-group{margin-bottom:32px;}
+    .li-ad-group-banner{width:100%;height:160px;object-fit:cover;border-radius:var(--r-md) var(--r-md) 0 0;display:block;}
+    .li-ad-group-header{padding:14px 18px;border-radius:0 0 0 0;margin-bottom:1px;}
+    .li-ad-group-header.green{background:var(--green-soft);border:1px solid rgba(29,158,117,0.2);border-top:none;}
+    .li-ad-group-header.accent{background:var(--accent-soft);border:1px solid rgba(183,79,42,0.2);border-top:none;}
+    .li-ad-group-header.purple{background:var(--purple-soft);border:1px solid rgba(83,74,183,0.2);border-top:none;}
+    .li-ad-group-header.gold{background:var(--gold-soft);border:1px solid rgba(213,155,49,0.2);border-top:none;}
+    .li-ad-group-header.muted{background:rgba(37,26,23,0.04);border:1px solid var(--line);border-top:none;}
+    .li-ad-group-wrap{border-radius:var(--r-md);overflow:hidden;border:1px solid var(--line);}
     .li-ad-group-title{font-size:15px;font-weight:800;letter-spacing:-0.02em;}
     .li-ad-group-title.green{color:var(--teal);}
     .li-ad-group-title.accent{color:var(--accent);}
@@ -207,25 +210,27 @@
     .li-ad-group-title.gold{color:#855a0f;}
     .li-ad-group-title.muted{color:var(--ink);}
     .li-ad-group-meta{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:10px;flex-wrap:wrap;}
-    .li-ad-analysis{padding:12px 16px;background:rgba(10,102,194,0.04);border:1px solid rgba(10,102,194,0.12);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);}
+    .li-ad-analysis{padding:14px 18px;background:rgba(10,102,194,0.04);border:1px solid rgba(10,102,194,0.15);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);}
     .li-ad-analysis-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#0A66C2;margin-bottom:6px;}
-    .li-ads-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:12px 0;}
+    .li-ads-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;padding:14px 14px 0;}
 
     /* Meta Ad card (simulated feed) */
-    .meta-ad-card{border:1px solid #dddfe2;border-radius:8px;background:#fff;overflow:hidden;display:flex;flex-direction:column;}
+    .meta-ad-card{border:1px solid #dddfe2;border-radius:10px;background:#fff;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 1px 4px rgba(0,0,0,0.06);}
     .meta-ad-header{display:flex;align-items:center;gap:10px;padding:12px 12px 8px;}
     .meta-ad-avatar{width:40px;height:40px;border-radius:50%;object-fit:contain;background:#f0f2f5;border:1px solid #dddfe2;padding:4px;flex-shrink:0;}
     .meta-ad-company{flex:1;min-width:0;}
     .meta-ad-company-name{font-size:13px;font-weight:700;color:#050505;line-height:1.2;}
     .meta-ad-promo{font-size:11px;color:#65676B;display:flex;align-items:center;gap:4px;margin-top:1px;}
-    .meta-ad-copy{padding:0 12px 12px;font-size:13px;line-height:1.6;color:#050505;white-space:pre-line;}
-    .meta-ad-img-placeholder{height:8px;background:linear-gradient(90deg,rgba(0,129,251,0.15),rgba(0,129,251,0.05));margin:0 0 2px;}
+    .meta-ad-copy{padding:0 12px 10px;font-size:13px;line-height:1.6;color:#050505;white-space:pre-line;}
+    .meta-ad-creative{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#f0f2f5;}
+    .meta-ad-creative-wrap{position:relative;overflow:hidden;}
+    .meta-ad-creative-badge{position:absolute;top:8px;left:8px;padding:3px 9px;border-radius:999px;font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:0.05em;background:rgba(0,0,0,0.55);color:#fff;backdrop-filter:blur(4px);}
     .meta-ad-footer{border-top:1px solid #dddfe2;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;}
     .meta-ad-cta{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:700;color:#fff;background:#0081FB;cursor:default;}
     .meta-ad-group{margin-bottom:28px;}
-    .meta-ad-analysis{padding:12px 14px;background:rgba(0,129,251,0.05);border:1px solid rgba(0,129,251,0.15);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);margin-top:10px;}
+    .meta-ad-analysis{padding:12px 14px;background:rgba(0,129,251,0.05);border:1px solid rgba(0,129,251,0.15);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);margin-top:12px;}
     .meta-ad-analysis-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#0081FB;margin-bottom:5px;}
-    .meta-ads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:16px 0;}
+    .meta-ads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:20px;margin:16px 0;}
 
     /* KPI card */
     .kpi-card{padding:18px;border-radius:var(--r-md);background:rgba(37,26,23,0.03);text-align:center;}
@@ -734,14 +739,17 @@ function renderMetaAdCard(ad) {
           <img src="logo-develon.png" class="meta-ad-avatar" alt="DEVELON Chile">
           <div class="meta-ad-company">
             <div class="meta-ad-company-name">DEVELON Chile</div>
-            <div class="meta-ad-promo">Publicidad · 🌐</div>
+            <div class="meta-ad-promo">Publicidad · 🌐 · ${ad.platform}</div>
           </div>
-          <span style="padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;color:${catColor};background:${catColor}18;white-space:nowrap;">${ad.category}</span>
+          <span style="padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;color:${catColor};background:${catColor}18;white-space:nowrap;flex-shrink:0;">${ad.category}</span>
         </div>
         <div class="meta-ad-copy">${ad.copy}</div>
-        <div class="meta-ad-img-placeholder"></div>
+        <div class="meta-ad-creative-wrap">
+          <img src="${ad.image}" class="meta-ad-creative" alt="${ad.category}" loading="lazy">
+          <span class="meta-ad-creative-badge">${ad.format}</span>
+        </div>
         <div class="meta-ad-footer">
-          <div style="font-size:11px;color:#65676B;">${ad.platform}</div>
+          <div style="font-size:11px;color:#65676B;">Meta Ad Library · ID ${ad.id}</div>
           <span class="meta-ad-cta">${ad.cta}</span>
         </div>
       </div>
@@ -840,11 +848,15 @@ function renderLiAdCard(ad) {
         </div>
       </div>
       <div class="li-ad-copy">${ad.copy}</div>
+      <div class="li-ad-creative-wrap">
+        <img src="${ad.image}" class="li-ad-creative" alt="Creatividad del anuncio" loading="lazy">
+        <span class="li-ad-creative-badge">${ad.tags[0] || 'DEVELON'}</span>
+      </div>
       <div class="li-ad-tags">
         ${ad.tags.map(t => `<span style="font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(10,102,194,0.08);color:#0A66C2;font-weight:600;">${t}</span>`).join('')}
       </div>
       <div class="li-ad-footer">
-        <div style="font-size:11px;color:#666;">ID: ${ad.id}</div>
+        <div style="font-size:11px;color:#666;">LinkedIn Ad · ID ${ad.id}</div>
         <span class="li-ad-cta">${ad.cta}</span>
       </div>
     </div>
@@ -854,21 +866,26 @@ function renderLiAdCard(ad) {
 function renderLiAdGroup(group) {
   return `
     <div class="li-ad-group">
-      <div class="li-ad-group-header ${group.color}">
-        <div class="li-ad-group-title ${group.color}">${group.category}</div>
-        <div class="li-ad-group-meta">
-          <span>📋 ${group.adCount} anuncios</span>
-          <span>🎯 ${group.objective}</span>
-          <span>🖼️ ${group.format}</span>
-          <span>🪝 Hook: ${group.hook}</span>
+      <div class="li-ad-group-wrap">
+        <img src="${group.image}" class="li-ad-group-banner" alt="${group.category}" loading="lazy">
+        <div class="li-ad-group-header ${group.color}">
+          <div class="li-ad-group-title ${group.color}">${group.category}</div>
+          <div class="li-ad-group-meta">
+            <span>📋 ${group.adCount} anuncios</span>
+            <span>🎯 ${group.objective}</span>
+            <span>🖼️ ${group.format}</span>
+            <span>🪝 Hook: ${group.hook}</span>
+          </div>
         </div>
-      </div>
-      <div class="li-ads-scroll">
-        ${group.ads.map(ad => renderLiAdCard(ad)).join('')}
-      </div>
-      <div class="li-ad-analysis">
-        <div class="li-ad-analysis-label">📊 Análisis estratégico del grupo</div>
-        ${group.analysis}
+        <div class="li-ads-scroll">
+          ${group.ads.map(ad => renderLiAdCard(ad)).join('')}
+        </div>
+        <div style="padding:14px;">
+          <div class="li-ad-analysis">
+            <div class="li-ad-analysis-label">📊 Análisis estratégico del grupo</div>
+            ${group.analysis}
+          </div>
+        </div>
       </div>
     </div>
   `;
