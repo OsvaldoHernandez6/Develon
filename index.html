@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radar Digital · DEVELON Chile</title>
+  <style>
+    :root {
+      --bg: #f6f1ea;
+      --surface: #fffaf5;
+      --ink: #251a17;
+      --muted: #6e5a54;
+      --line: rgba(37,26,23,0.10);
+      --accent: #b74f2a;
+      --accent-soft: rgba(183,79,42,0.08);
+      --gold: #d59b31;
+      --gold-soft: rgba(213,155,49,0.12);
+      --green: #1D9E75;
+      --green-soft: rgba(29,158,117,0.10);
+      --purple: #534AB7;
+      --purple-soft: rgba(83,74,183,0.08);
+      --teal: #0F6E56;
+      --teal-soft: rgba(15,110,86,0.08);
+      --shadow-sm: 0 2px 8px rgba(76,43,31,0.06);
+      --shadow: 0 8px 30px rgba(76,43,31,0.08);
+      --r-sm: 10px;
+      --r-md: 14px;
+      --r-lg: 20px;
+      --r-xl: 28px;
+    }
+    *{box-sizing:border-box;margin:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:"Avenir Next","Segoe UI",system-ui,sans-serif;color:var(--ink);background:linear-gradient(180deg,#fcf7f1 0%,#f4eee7 100%);-webkit-font-smoothing:antialiased;}
+    .page{width:min(1200px,calc(100% - 32px));margin:0 auto;padding:20px 0 72px;}
+    h1{font-size:clamp(30px,4.5vw,52px);line-height:1;letter-spacing:-0.04em;margin-top:14px;}
+    h2{font-size:clamp(22px,3vw,34px);line-height:1.05;letter-spacing:-0.03em;}
+    h3{font-size:18px;letter-spacing:-0.02em;}
+
+    /* Nav */
+    .nav{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:18px;padding:10px 14px;border-radius:var(--r-md);background:rgba(255,250,245,0.92);border:1px solid var(--line);backdrop-filter:blur(16px);position:sticky;top:8px;z-index:100;}
+    .nav a{padding:6px 14px;border-radius:999px;font-size:13px;font-weight:600;color:var(--muted);text-decoration:none;transition:all 0.2s;}
+    .nav a:hover{color:var(--accent);background:var(--accent-soft);}
+    .nav a.nav-ig{color:#E4405F;}
+    .nav a.nav-ig:hover{background:rgba(228,64,95,0.08);}
+    .nav a.nav-li{color:#0A66C2;}
+    .nav a.nav-li:hover{background:rgba(10,102,194,0.08);}
+    .nav a.nav-meta{color:#0081FB;}
+    .nav a.nav-meta:hover{background:rgba(0,129,251,0.08);}
+    .nav-sep{width:1px;height:20px;background:var(--line);margin:0 6px;align-self:center;}
+    .nav-icon{width:14px;height:14px;vertical-align:-2px;margin-right:3px;}
+
+    /* Section dividers */
+    .section-divider{margin:36px 0 24px;padding:20px 24px;border-radius:var(--r-xl);display:flex;align-items:center;gap:12px;}
+    .section-divider.ig{background:linear-gradient(135deg,rgba(228,64,95,0.06) 0%,rgba(252,175,69,0.06) 100%);border:1px solid rgba(228,64,95,0.15);}
+    .section-divider.li{background:rgba(10,102,194,0.04);border:1px solid rgba(10,102,194,0.12);}
+    .section-divider.meta{background:rgba(0,129,251,0.04);border:1px solid rgba(0,129,251,0.12);}
+    .section-divider.industry{background:rgba(37,26,23,0.03);border:1px solid var(--line);}
+    .section-divider-icon{width:36px;height:36px;border-radius:var(--r-sm);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .section-divider-icon.ig{background:rgba(228,64,95,0.1);}
+    .section-divider-icon.li{background:rgba(10,102,194,0.1);}
+    .section-divider-icon.meta{background:rgba(0,129,251,0.1);}
+    .section-divider-icon.industry{background:rgba(37,26,23,0.06);}
+    .section-divider-icon img{width:22px;height:22px;}
+    .section-divider h2{font-size:clamp(20px,2.5vw,28px);letter-spacing:-0.03em;}
+    .section-divider p{color:var(--muted);font-size:13px;margin-top:2px;}
+
+    /* Cards */
+    .card{padding:24px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow-sm);}
+    .grid{display:grid;gap:14px;}
+    .g2{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .g3{grid-template-columns:repeat(3,minmax(0,1fr));}
+    .g4{grid-template-columns:repeat(4,minmax(0,1fr));}
+    .section{margin-top:24px;}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:14px;}
+    .section-head p{max-width:560px;color:var(--muted);font-size:14px;line-height:1.5;}
+
+    /* Hero */
+    .hero{padding:28px 30px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow);margin-bottom:20px;}
+    .pill{display:inline-block;padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;}
+    .pill.purple{color:var(--purple);background:var(--purple-soft);}
+    .pill.accent{color:var(--accent);background:var(--accent-soft);}
+    .pill.green{color:var(--green);background:var(--green-soft);}
+    .pill.gold{color:#855a0f;background:var(--gold-soft);}
+    .pill.teal{color:var(--teal);background:var(--teal-soft);}
+    .metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:22px;}
+    .metric{padding:16px;border-radius:var(--r-md);background:rgba(37,26,23,0.03);}
+    .metric-label{font-size:12px;color:var(--muted);margin-bottom:4px;}
+    .metric-value{font-size:26px;font-weight:700;letter-spacing:-0.04em;}
+    .metric-sub{font-size:11px;color:var(--muted);margin-top:2px;}
+
+    /* Insights */
+    .insight{border-left:3px solid var(--green);padding:10px 0 10px 14px;margin-bottom:10px;}
+    .insight:last-child{margin-bottom:0;}
+    .insight h4{font-size:14px;font-weight:700;margin-bottom:4px;}
+    .insight p{font-size:13px;color:var(--muted);line-height:1.5;}
+    .insight.accent{border-left-color:var(--accent);}
+    .insight.gold{border-left-color:var(--gold);}
+    .insight.purple{border-left-color:var(--purple);}
+    .insight.li{border-left-color:#0A66C2;}
+
+    /* Rank */
+    .rank-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);}
+    .rank-row:last-of-type{border-bottom:none;}
+    .rank-pos{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;background:rgba(37,26,23,0.06);color:var(--muted);flex-shrink:0;}
+    .rank-pos.gold{background:#FFF4D6;color:#9A7100;}
+    .rank-info{flex:1;min-width:0;}
+    .rank-name{font-weight:700;font-size:14px;}
+    .rank-handle{font-size:12px;color:var(--muted);text-decoration:none;}
+    .rank-bar-wrap{width:20%;height:8px;background:rgba(37,26,23,0.05);border-radius:99px;overflow:hidden;}
+    .rank-bar{height:100%;border-radius:99px;background:var(--accent);transition:width 0.6s ease;}
+    .rank-count{font-size:15px;font-weight:700;min-width:60px;text-align:right;}
+
+    /* Table */
+    .cmp-scroll{overflow-x:auto;}
+    .cmp-table{width:100%;border-collapse:collapse;font-size:13px;}
+    .cmp-table th{text-align:left;font-weight:700;padding:8px 14px;border-bottom:2px solid var(--line);color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:0.06em;}
+    .cmp-table td{padding:10px 14px;border-bottom:1px solid var(--line);}
+    .cmp-table tr:last-child td{border-bottom:none;}
+
+    /* Recs */
+    .rec-item{padding:12px 0;border-bottom:1px solid var(--line);}
+    .rec-item:last-child{border-bottom:none;}
+    .rec-item-top{display:flex;align-items:center;gap:8px;}
+    .rec-item h4{font-size:14px;flex:1;}
+    .rec-item p{font-size:13px;color:var(--muted);line-height:1.5;margin-top:4px;}
+
+    /* Logos */
+    .brand-logo{border-radius:8px;object-fit:contain;background:#fff;border:1px solid var(--line);}
+    .brand-logo.sm{width:32px;height:32px;}
+    .brand-logo.lg{width:48px;height:48px;}
+    .platform-icon{width:14px;height:14px;vertical-align:-2px;}
+
+    /* Tags */
+    .meta-tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:6px;}
+    .meta-tag{font-size:11px;padding:2px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:600;}
+    .meta-tag.li{background:rgba(10,102,194,0.08);color:#0A66C2;}
+    .meta-tag.meta{background:rgba(0,129,251,0.08);color:#0081FB;}
+    .meta-tag.gold{background:var(--gold-soft);color:#855a0f;}
+
+    /* LinkedIn post cards */
+    .li-post-card{display:flex;gap:12px;padding:12px;margin-bottom:8px;border-radius:var(--r-sm);border:1px solid var(--line);text-decoration:none;color:inherit;transition:all 0.15s;}
+    .li-post-card:hover{border-color:rgba(10,102,194,0.3);box-shadow:0 2px 8px rgba(10,102,194,0.08);}
+    .li-post-logo{width:48px;height:48px;border-radius:6px;object-fit:contain;flex-shrink:0;background:#fff;border:1px solid var(--line);padding:4px;}
+    .li-post-body{flex:1;min-width:0;}
+    .li-post-body h4{font-size:13px;margin-bottom:4px;font-weight:700;}
+    .li-post-body p{font-size:12px;color:var(--muted);line-height:1.4;}
+    .li-post-brand{font-size:11px;color:#0A66C2;font-weight:600;margin-bottom:4px;}
+
+    /* Meta Ads */
+    .meta-ads-brand{padding:20px;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--surface);box-shadow:var(--shadow-sm);}
+    .meta-ads-brand.has-ads{border-color:rgba(0,129,251,0.2);}
+    .meta-ads-status{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.03em;}
+    .meta-ads-status.active{color:#0081FB;background:rgba(0,129,251,0.08);}
+    .meta-ads-status-dot{width:8px;height:8px;border-radius:50%;}
+    .meta-ads-status.active .meta-ads-status-dot{background:#00C853;box-shadow:0 0 6px rgba(0,200,83,0.4);}
+    .meta-ads-notes{margin-top:12px;padding:0;list-style:none;}
+    .meta-ads-notes li{position:relative;padding:8px 0 8px 18px;font-size:14px;line-height:1.5;color:var(--muted);border-bottom:1px solid var(--line);}
+    .meta-ads-notes li:last-child{border-bottom:none;}
+    .meta-ads-notes li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#0081FB;}
+    .meta-ads-cta-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:10px 18px;border-radius:var(--r-sm);background:#0081FB;color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s;}
+    .meta-ads-cta-btn:hover{background:#006ad4;box-shadow:0 4px 12px rgba(0,129,251,0.25);}
+    .li-ads-cta-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:10px 18px;border-radius:var(--r-sm);background:#0A66C2;color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s;}
+    .li-ads-cta-btn:hover{background:#085298;box-shadow:0 4px 12px rgba(10,102,194,0.25);}
+
+    /* Embed */
+    .embed-shell{border:1px solid var(--line);border-radius:var(--r-md);overflow:hidden;background:#fff;}
+    .embed-shell iframe{width:100%;border:none;min-height:620px;}
+    .embed-tabs{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;}
+    .embed-tab{padding:7px 18px;border-radius:999px;font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer;transition:all 0.15s;}
+    .embed-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+    /* Ad categories */
+    .ad-cat{padding:10px 0;border-bottom:1px solid var(--line);}
+    .ad-cat:last-child{border-bottom:none;}
+    .ad-cat-top{display:flex;gap:6px;align-items:center;margin-bottom:4px;}
+    .ad-cat h4{font-size:14px;font-weight:700;flex:1;}
+    .ad-cat p{font-size:13px;color:var(--muted);line-height:1.4;}
+    .format-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:rgba(10,102,194,0.08);color:#0A66C2;}
+    .obj-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:var(--green-soft);color:var(--teal);}
+
+    /* KPI card */
+    .kpi-card{padding:18px;border-radius:var(--r-md);background:rgba(37,26,23,0.03);text-align:center;}
+    .kpi-value{font-size:32px;font-weight:800;letter-spacing:-0.04em;line-height:1;}
+    .kpi-label{font-size:12px;color:var(--muted);margin-top:4px;}
+    .kpi-card.accent{background:var(--accent-soft);}
+    .kpi-card.green{background:var(--green-soft);}
+    .kpi-card.gold{background:var(--gold-soft);}
+    .kpi-card.purple{background:var(--purple-soft);}
+
+    /* Profile points */
+    .profile-point{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;line-height:1.5;color:var(--muted);}
+    .profile-point:last-child{border-bottom:none;}
+    .profile-point::before{content:"→";color:var(--accent);font-weight:700;flex-shrink:0;}
+
+    /* Note badge */
+    .note-badge{display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;background:var(--gold-soft);color:#855a0f;font-weight:600;margin-left:6px;}
+
+    /* Responsive */
+    @media(max-width:768px){
+      .g2,.g3,.g4{grid-template-columns:1fr;}
+      .metrics{grid-template-columns:repeat(2,1fr);}
+      .embed-shell iframe{min-height:520px;}
+    }
+    @media(max-width:480px){
+      .metrics{grid-template-columns:1fr;}
+      h1{font-size:22px;}
+    }
+
+    footer{text-align:center;font-size:12px;color:var(--muted);margin-top:48px;padding-top:24px;border-top:1px solid var(--line);}
+  </style>
+</head>
+<body>
+<div class="page">
+  <nav class="nav" id="nav"></nav>
+  <div id="app"></div>
+  <footer id="footer"></footer>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script>
+let DATA = {};
+
+const fmt = n => n >= 1e6 ? (n/1e6).toFixed(1)+'M' : n >= 1e3 ? (n/1e3).toFixed(1)+'K' : String(n);
+const fmtFull = n => n ? n.toLocaleString('es-CL') : '—';
+
+function priorityPill(p) {
+  if (p === 'alta') return '<span class="pill accent">Alta prioridad</span>';
+  return '<span class="pill gold">Prioridad media</span>';
+}
+
+function renderNav() {
+  return `
+    <a href="#sec-perfil">Perfil de marca</a>
+    <div class="nav-sep"></div>
+    <a class="nav-ig" href="#sec-instagram"><img class="nav-icon" src="icon-instagram.svg" alt="">Instagram</a>
+    <div class="nav-sep"></div>
+    <a class="nav-li" href="#sec-linkedin"><img class="nav-icon" src="icon-linkedin.svg" alt="">LinkedIn</a>
+    <div class="nav-sep"></div>
+    <a class="nav-meta" href="#sec-metaads"><img class="nav-icon" src="icon-meta.svg" alt="">Meta Ads</a>
+    <a class="nav-li" href="#sec-liads"><img class="nav-icon" src="icon-linkedin.svg" alt="">LinkedIn Ads</a>
+  `;
+}
+
+function renderHero() {
+  const b = DATA.brands[0];
+  const li = DATA.linkedin.brands[0];
+  return `
+    <div class="hero">
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+        <img src="${b.logo}" class="brand-logo lg" alt="${b.name}" style="width:64px;height:64px;">
+        <div>
+          <span class="pill purple">Radar Digital 2026</span>
+          <h1 style="margin-top:8px;">DEVELON Chile</h1>
+          <p style="color:var(--muted);font-size:15px;margin-top:4px;">HD Construction Equipment Chile S.A. · Maquinaria de Construcción y Minería</p>
+        </div>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <div class="metric-label">Seguidores Instagram</div>
+          <div class="metric-value">${fmt(b.followers)}</div>
+          <div class="metric-sub">@${b.handle}</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Publicaciones IG</div>
+          <div class="metric-value">${fmtFull(b.posts)}</div>
+          <div class="metric-sub">${b.avgLikes} likes prom · ${b.avgComments} comentarios</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Engagement Rate</div>
+          <div class="metric-value">${b.engagementRate}%</div>
+          <div class="metric-sub">Promedio para B2B de nicho</div>
+        </div>
+        <div class="metric">
+          <div class="metric-label">Sucursales activas</div>
+          <div class="metric-value">5</div>
+          <div class="metric-sub">Stgo · Antofagasta · Copiapó · Concepción · Pto Montt</div>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderPerfil() {
+  const b = DATA.brands[0];
+  return `
+    <div class="section-divider industry" id="sec-perfil">
+      <div class="section-divider-icon industry">
+        <img src="logo-develon.png" alt="" style="width:22px;height:22px;object-fit:contain;">
+      </div>
+      <div>
+        <h2>Perfil de Marca</h2>
+        <p>Presencia digital · Canales · Estrategia general</p>
+      </div>
+    </div>
+
+    <div class="grid g2">
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Sobre DEVELON Chile</h3>
+        <p style="font-size:14px;line-height:1.6;color:var(--muted);">${b.summary}</p>
+        <div class="meta-tags" style="margin-top:14px;">
+          ${b.tags.map(t => `<span class="meta-tag">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Ecosistema Digital</h3>
+        <div style="display:flex;flex-direction:column;gap:8px;">
+          <a href="https://www.instagram.com/develon_chile/" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);">
+            <img src="icon-instagram.svg" style="width:18px;height:18px;">
+            <span style="font-size:13px;font-weight:600;">@develon_chile</span>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);">${fmtFull(b.followers)} seguidores</span>
+          </a>
+          <a href="https://cl.linkedin.com/company/develon-chile" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);">
+            <img src="icon-linkedin.svg" style="width:18px;height:18px;">
+            <span style="font-size:13px;font-weight:600;">HD Construction Equipment Chile</span>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);">~1.800 seg.</span>
+          </a>
+          <a href="https://www.facebook.com/DevelonChile/" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);">
+            <img src="icon-meta.svg" style="width:18px;height:18px;">
+            <span style="font-size:13px;font-weight:600;">DevelonChile</span>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);">Facebook</span>
+          </a>
+          <a href="https://develon-ce.cl/" target="_blank" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:inherit;padding:8px;border-radius:8px;border:1px solid var(--line);">
+            <span style="font-size:18px;">🌐</span>
+            <span style="font-size:13px;font-weight:600;">develon-ce.cl</span>
+            <span style="margin-left:auto;font-size:12px;color:var(--muted);">Web principal</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:14px;">
+      <h3 style="margin-bottom:14px;">Puntos clave del perfil digital</h3>
+      ${b.profilePoints.map(p => `<div class="profile-point">${p}</div>`).join('')}
+    </div>
+
+    <div class="grid g2" style="margin-top:14px;">
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Línea de contenido</h3>
+        <p style="font-size:13px;font-weight:700;color:var(--accent);margin-bottom:6px;">${b.contentLine.label}</p>
+        <p style="font-size:14px;line-height:1.6;color:var(--muted);">${b.contentLine.description}</p>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Tabla comparativa de posicionamiento</h3>
+        <div class="cmp-scroll">
+          <table class="cmp-table">
+            <thead><tr><th>Dimensión</th><th>DEVELON Chile</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">Tono</td><td>${b.comparison.tone}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">Frecuencia</td><td>${b.comparison.frequency}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">CTA</td><td>${b.comparison.cta}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;">Comunidad</td><td>${b.comparison.community}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderInstagram() {
+  const b = DATA.brands[0];
+  const conc = DATA.conclusions;
+  const dd = DATA.deepDives[0];
+  const recs = DATA.recommendations;
+
+  return `
+    <div class="section-divider ig" id="sec-instagram">
+      <div class="section-divider-icon ig">
+        <img src="icon-instagram.svg" alt="">
+      </div>
+      <div>
+        <h2>Instagram · @develon_chile</h2>
+        <p>Análisis orgánico · Contenido · Comunidad · Posts destacados</p>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="grid g4" style="margin-bottom:14px;">
+      <div class="kpi-card accent">
+        <div class="kpi-value" style="color:var(--accent);">${fmtFull(b.followers)}</div>
+        <div class="kpi-label">Seguidores</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">${fmtFull(b.posts)}</div>
+        <div class="kpi-label">Publicaciones</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-value" style="color:var(--green);">${b.avgLikes}</div>
+        <div class="kpi-label">Likes promedio</div>
+      </div>
+      <div class="kpi-card gold">
+        <div class="kpi-value" style="color:var(--gold);">${b.engagementRate}%</div>
+        <div class="kpi-label">Engagement Rate</div>
+      </div>
+    </div>
+
+    <!-- Chart -->
+    <div class="card" style="margin-bottom:14px;">
+      <div class="section-head">
+        <h3>Desglose de métricas</h3>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center;">
+        <div style="height:200px;position:relative;">
+          <canvas id="igMetricsChart"></canvas>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;">
+          <div class="kpi-card" style="text-align:left;padding:12px;">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:2px;">Ratio likes/comentarios</div>
+            <div style="font-size:20px;font-weight:800;">22:1</div>
+            <div style="font-size:11px;color:var(--green);margin-top:2px;">↑ Bueno para B2B</div>
+          </div>
+          <div class="kpi-card" style="text-align:left;padding:12px;">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:2px;">Ranking global</div>
+            <div style="font-size:20px;font-weight:800;">#5.079.358</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">#25.800 en Chile</div>
+          </div>
+          <div class="kpi-card" style="text-align:left;padding:12px;">
+            <div style="font-size:12px;color:var(--muted);margin-bottom:2px;">Posición en Chile</div>
+            <div style="font-size:20px;font-weight:800;">Nicho</div>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px;">Audiencia especializada B2B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Conclusions -->
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Qué publica DEVELON Chile</h3>
+        ${conc.whatTheyPublish.map(i => `
+          <div class="insight">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Cómo responde la comunidad</h3>
+        ${conc.howCommunityReacts.map(i => `
+          <div class="insight accent">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Deep dive -->
+    <div class="card" style="margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+        <img src="${b.logo}" class="brand-logo sm" alt="${b.name}">
+        <div>
+          <div style="font-size:12px;color:var(--muted);">Análisis detallado</div>
+          <div style="font-weight:700;">DEVELON Chile en Instagram</div>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:16px;">${dd.intro}</p>
+      <div class="grid g2">
+        <div>
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Pilares de contenido</div>
+          ${dd.whatPublishes.map(i => `
+            <div class="insight">
+              <h4>${i.title}</h4>
+              <p>${i.text}</p>
+            </div>
+          `).join('')}
+        </div>
+        <div>
+          <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Respuesta de la comunidad</div>
+          ${dd.communityResponse.map(i => `
+            <div class="insight gold">
+              <h4>${i.title}</h4>
+              <p>${i.text}</p>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Posts -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:14px;">Posts destacados</h3>
+      <div class="embed-tabs" id="ig-tabs">
+        <button class="embed-tab active" onclick="switchTab('views','ig')">🎬 Mayor alcance estimado</button>
+        <button class="embed-tab" onclick="switchTab('comments','ig')">💬 Mayor conversación</button>
+        <button class="embed-tab" onclick="switchTab('likes','ig')">❤️ Mayor engagement</button>
+      </div>
+      <div id="tab-views" class="tab-content">
+        ${renderPost(DATA.topPosts.views[0])}
+      </div>
+      <div id="tab-comments" class="tab-content" style="display:none;">
+        ${renderPost(DATA.topPosts.comments[0])}
+      </div>
+      <div id="tab-likes" class="tab-content" style="display:none;">
+        ${renderPost(DATA.topPosts.likes[0])}
+      </div>
+    </div>
+
+    <!-- Recommendations -->
+    <div class="card">
+      <h3 style="margin-bottom:16px;">Recomendaciones para Instagram</h3>
+      ${recs.map(cat => `
+        <div style="margin-bottom:20px;">
+          <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:8px;">${cat.icon} ${cat.category}</div>
+          ${cat.items.map(item => `
+            <div class="rec-item">
+              <div class="rec-item-top">
+                <h4>${item.title}</h4>
+                ${priorityPill(item.priority)}
+              </div>
+              <p>${item.text}</p>
+            </div>
+          `).join('')}
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderPost(post) {
+  return `
+    <div class="grid g2" style="gap:14px;">
+      <div class="embed-shell">
+        <iframe src="${post.embedUrl}" scrolling="no" allowtransparency="true" frameborder="0"></iframe>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column;justify-content:space-between;">
+        <div>
+          <span class="pill accent" style="margin-bottom:10px;display:inline-block;">${post.type === 'video' ? '🎬 Video / Reel' : '📸 Imagen'}</span>
+          <h3 style="margin-bottom:10px;">${post.title}</h3>
+          <p style="font-size:14px;line-height:1.6;color:var(--muted);">${post.description}</p>
+        </div>
+        <a href="${post.postUrl}" target="_blank" style="display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:10px 18px;border-radius:var(--r-sm);background:var(--accent);color:#fff;text-decoration:none;font-size:13px;font-weight:600;">
+          Ver en Instagram →
+        </a>
+      </div>
+    </div>
+  `;
+}
+
+function renderLinkedIn() {
+  const li = DATA.linkedin;
+  const b = li.brands[0];
+  const conc = li.conclusions;
+  const recs = li.recommendations;
+
+  return `
+    <div class="section-divider li" id="sec-linkedin">
+      <div class="section-divider-icon li">
+        <img src="icon-linkedin.svg" alt="">
+      </div>
+      <div>
+        <h2>LinkedIn · HD Construction Equipment Chile</h2>
+        <p>Análisis orgánico · Estrategia B2B · Contenido institucional</p>
+      </div>
+    </div>
+
+    <!-- KPIs -->
+    <div class="grid g4" style="margin-bottom:14px;">
+      <div class="kpi-card" style="background:rgba(10,102,194,0.06);">
+        <div class="kpi-value" style="color:#0A66C2;font-size:24px;">~${fmt(b.followers)}</div>
+        <div class="kpi-label">Seguidores estimados <span class="note-badge">Estimado</span></div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">B2B</div>
+        <div class="kpi-label">Audiencia objetivo</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-value">5</div>
+        <div class="kpi-label">Sucursales Chile</div>
+      </div>
+      <div class="kpi-card green">
+        <div class="kpi-value" style="color:var(--green);">ISO</div>
+        <div class="kpi-label">9001 Certificada</div>
+      </div>
+    </div>
+
+    <!-- Brand profile -->
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <img src="${b.logo}" class="brand-logo sm" alt="${b.name}">
+          <div>
+            <div style="font-weight:700;">${b.name}</div>
+            <a href="${b.url}" target="_blank" style="font-size:12px;color:#0A66C2;text-decoration:none;">Ver página LinkedIn →</a>
+          </div>
+        </div>
+        <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:12px;">${b.summary}</p>
+        <div class="meta-tags">
+          ${b.tags.map(t => `<span class="meta-tag li">${t}</span>`).join('')}
+        </div>
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:12px;">Análisis de posicionamiento</h3>
+        <div class="cmp-scroll">
+          <table class="cmp-table">
+            <thead><tr><th>Dimensión</th><th>DEVELON Chile en LinkedIn</th></tr></thead>
+            <tbody>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;">Tono</td><td>${b.comparison.tone}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;">Frecuencia</td><td>${b.comparison.frequency}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;">CTA</td><td>${b.comparison.cta}</td></tr>
+              <tr><td style="color:var(--muted);font-size:12px;font-weight:700;text-transform:uppercase;">Comunidad</td><td>${b.comparison.community}</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile points -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:12px;">Puntos clave del perfil LinkedIn</h3>
+      ${b.profilePoints.map(p => `<div class="profile-point">${p}</div>`).join('')}
+    </div>
+
+    <!-- Posts -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:14px;">Publicaciones representativas</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:14px;">LinkedIn no permite embeds — las publicaciones se muestran como tarjetas clicables.</p>
+      ${li.posts.map(post => `
+        <a href="${post.postUrl}" target="_blank" class="li-post-card">
+          <img src="${post.imageUrl}" class="li-post-logo" alt="${post.brand}">
+          <div class="li-post-body">
+            <div class="li-post-brand">${post.brand}</div>
+            <h4>${post.title}</h4>
+            <p>${post.description}</p>
+            <div class="meta-tags" style="margin-top:6px;">
+              ${post.tags.map(t => `<span class="meta-tag li">${t}</span>`).join('')}
+            </div>
+          </div>
+        </a>
+      `).join('')}
+    </div>
+
+    <!-- Conclusions -->
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Qué publica en LinkedIn</h3>
+        ${conc.whatTheyPublish.map(i => `
+          <div class="insight li">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Cómo responde la audiencia B2B</h3>
+        ${conc.howCommunityReacts.map(i => `
+          <div class="insight gold">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Recommendations LinkedIn -->
+    <div class="card">
+      <h3 style="margin-bottom:16px;">Recomendaciones para LinkedIn</h3>
+      ${recs.map(cat => `
+        <div style="margin-bottom:20px;">
+          <div style="font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:8px;">${cat.icon} ${cat.category}</div>
+          ${cat.items.map(item => `
+            <div class="rec-item">
+              <div class="rec-item-top">
+                <h4>${item.title}</h4>
+                ${priorityPill(item.priority)}
+              </div>
+              <p>${item.text}</p>
+            </div>
+          `).join('')}
+        </div>
+      `).join('')}
+    </div>
+  `;
+}
+
+function renderMetaAds() {
+  const ma = DATA.metaAds;
+  const b = ma.brands[0];
+  return `
+    <div class="section-divider meta" id="sec-metaads">
+      <div class="section-divider-icon meta">
+        <img src="icon-meta.svg" alt="">
+      </div>
+      <div>
+        <h2>Meta Ads · Facebook & Instagram</h2>
+        <p>Publicidad paga · Estrategia de anuncios · Creatividades</p>
+      </div>
+    </div>
+
+    <div class="card meta-ads-brand has-ads" style="margin-bottom:14px;">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+        <img src="${b.logo}" class="brand-logo lg" alt="${b.name}">
+        <div>
+          <div style="font-weight:700;font-size:16px;">${b.name}</div>
+          <div style="font-size:12px;color:var(--muted);">Facebook Page ID: ${b.pageId}</div>
+        </div>
+        <div style="margin-left:auto;">
+          <span class="meta-ads-status active">
+            <span class="meta-ads-status-dot"></span>
+            Anuncios activos
+          </span>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:14px;">${b.summary}</p>
+      <ul class="meta-ads-notes">
+        ${b.strategyNotes.map(n => `<li>${n}</li>`).join('')}
+      </ul>
+      <a href="${b.adLibraryUrl}" target="_blank" class="meta-ads-cta-btn">
+        Ver anuncios en Meta Ad Library →
+      </a>
+    </div>
+
+    <!-- Conclusions + Recs -->
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Conclusiones Meta Ads</h3>
+        ${ma.conclusions.map(i => `
+          <div class="insight" style="border-left-color:#0081FB;">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Recomendaciones Meta Ads</h3>
+        ${ma.recommendations.map(item => `
+          <div class="rec-item">
+            <div class="rec-item-top">
+              <h4>${item.title}</h4>
+              ${priorityPill(item.priority)}
+            </div>
+            <p>${item.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function renderLinkedInAds() {
+  const la = DATA.linkedinAds;
+  const b = la.brands[0];
+  return `
+    <div class="section-divider li" id="sec-liads">
+      <div class="section-divider-icon li">
+        <img src="icon-linkedin.svg" alt="">
+      </div>
+      <div>
+        <h2>LinkedIn Ads · HD Construction Equipment Chile</h2>
+        <p>Publicidad B2B paga · Targeting profesional · Lead generation</p>
+      </div>
+    </div>
+
+    <div class="card meta-ads-brand has-ads" style="margin-bottom:14px;border-color:rgba(10,102,194,0.2);">
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+        <img src="${b.logo}" class="brand-logo lg" alt="${b.name}">
+        <div>
+          <div style="font-weight:700;font-size:16px;">${b.name}</div>
+          <div style="font-size:12px;color:var(--muted);">Anunciante: ${b.advertiserName}</div>
+        </div>
+        <div style="margin-left:auto;">
+          <span class="meta-ads-status active" style="color:#0A66C2;background:rgba(10,102,194,0.08);">
+            <span class="meta-ads-status-dot" style="background:#0A66C2;box-shadow:0 0 6px rgba(10,102,194,0.4);"></span>
+            Anuncios activos
+          </span>
+        </div>
+      </div>
+      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:14px;">${b.summary}</p>
+
+      <!-- Ad categories -->
+      <div style="margin-bottom:14px;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Categorías de anuncios identificadas</div>
+        ${b.adCategories.map(cat => `
+          <div class="ad-cat">
+            <div class="ad-cat-top">
+              <h4>${cat.category}</h4>
+              <span class="format-pill">${cat.format}</span>
+              <span class="obj-pill">${cat.objective}</span>
+            </div>
+            <p>${cat.description}</p>
+          </div>
+        `).join('')}
+      </div>
+
+      <div style="margin-bottom:14px;">
+        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Notas estratégicas</div>
+        <ul class="meta-ads-notes" style="">
+          ${b.strategyNotes.map(n => `<li style="">${n}</li>`).join('')}
+        </ul>
+      </div>
+      <style>.meta-ads-notes.li-style li::before{background:#0A66C2;}</style>
+
+      <a href="${b.adLibraryUrl}" target="_blank" class="li-ads-cta-btn">
+        Ver anuncios en LinkedIn Ad Library →
+      </a>
+    </div>
+
+    <!-- Conclusions + Recs -->
+    <div class="grid g2" style="margin-bottom:14px;">
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Conclusiones LinkedIn Ads</h3>
+        ${la.conclusions.map(i => `
+          <div class="insight li">
+            <h4>${i.title}</h4>
+            <p>${i.text}</p>
+          </div>
+        `).join('')}
+      </div>
+      <div class="card">
+        <h3 style="margin-bottom:14px;">Recomendaciones LinkedIn Ads</h3>
+        ${la.recommendations.map(item => `
+          <div class="rec-item">
+            <div class="rec-item-top">
+              <h4>${item.title}</h4>
+              ${priorityPill(item.priority)}
+            </div>
+            <p>${item.text}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
+}
+
+function switchTab(tab, section) {
+  document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+  document.querySelectorAll('.embed-tab').forEach(el => el.classList.remove('active'));
+  document.getElementById('tab-' + tab).style.display = '';
+  event.target.classList.add('active');
+}
+
+function render() {
+  document.getElementById('nav').innerHTML = renderNav();
+  document.getElementById('app').innerHTML = [
+    renderHero(),
+    renderPerfil(),
+    renderInstagram(),
+    renderLinkedIn(),
+    renderMetaAds(),
+    renderLinkedInAds()
+  ].join('');
+  document.getElementById('footer').innerHTML = `
+    Datos extraídos públicamente · ${DATA.meta.extractionDate} · ${DATA.meta.industry} · ${DATA.meta.market}
+    <br><span style="opacity:0.5;">Para actualizar, modifica data.json y recarga la página · Sirve localmente con: <code>python3 -m http.server 8080</code></span>
+  `;
+}
+
+function renderCharts() {
+  const b = DATA.brands[0];
+  const ctx = document.getElementById('igMetricsChart');
+  if (!ctx) return;
+  new Chart(ctx, {
+    type: 'doughnut',
+    data: {
+      labels: ['Likes prom.', 'Comentarios prom.'],
+      datasets: [{
+        data: [b.avgLikes, b.avgComments],
+        backgroundColor: ['#b74f2a', '#d59b31'],
+        borderWidth: 0,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 12 }, color: '#6e5a54' } },
+        tooltip: { callbacks: { label: ctx => ` ${ctx.label}: ${ctx.raw}` } }
+      },
+      cutout: '65%'
+    }
+  });
+}
+
+async function init() {
+  const r = await fetch('data.json');
+  DATA = await r.json();
+  render();
+  setTimeout(() => renderCharts(), 100);
+}
+init();
+</script>
+</body>
+</html>
