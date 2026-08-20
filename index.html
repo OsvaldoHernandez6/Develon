@@ -157,6 +157,7 @@
     .meta-ads-notes li{position:relative;padding:8px 0 8px 18px;font-size:14px;line-height:1.5;color:var(--muted);border-bottom:1px solid var(--line);}
     .meta-ads-notes li:last-child{border-bottom:none;}
     .meta-ads-notes li::before{content:'';position:absolute;left:0;top:14px;width:6px;height:6px;border-radius:50%;background:#0081FB;}
+    .li-notes li::before{background:#0A66C2 !important;}
     .meta-ads-cta-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:10px 18px;border-radius:var(--r-sm);background:#0081FB;color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s;}
     .meta-ads-cta-btn:hover{background:#006ad4;box-shadow:0 4px 12px rgba(0,129,251,0.25);}
     .li-ads-cta-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:10px 18px;border-radius:var(--r-sm);background:#0A66C2;color:#fff;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.2s;}
@@ -177,6 +178,54 @@
     .ad-cat p{font-size:13px;color:var(--muted);line-height:1.4;}
     .format-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:rgba(10,102,194,0.08);color:#0A66C2;}
     .obj-pill{padding:3px 10px;border-radius:999px;font-size:11px;font-weight:700;background:var(--green-soft);color:var(--teal);}
+
+    /* LinkedIn Ad card (simulated feed) */
+    .li-ad-card{border:1px solid var(--line);border-radius:var(--r-md);background:#fff;overflow:hidden;display:flex;flex-direction:column;}
+    .li-ad-header{display:flex;align-items:center;gap:10px;padding:14px 16px 10px;}
+    .li-ad-avatar{width:42px;height:42px;border-radius:6px;object-fit:contain;background:#f3f2ef;border:1px solid var(--line);padding:4px;flex-shrink:0;}
+    .li-ad-company{flex:1;min-width:0;}
+    .li-ad-company-name{font-size:13px;font-weight:700;color:#1a1a1a;line-height:1.2;}
+    .li-ad-promo{font-size:11px;color:#666;display:flex;align-items:center;gap:4px;margin-top:2px;}
+    .li-ad-promo::before{content:"Promocionado";font-size:11px;color:#666;}
+    .li-ad-promo-dot{width:3px;height:3px;border-radius:50%;background:#666;}
+    .li-ad-globe{font-size:10px;}
+    .li-ad-copy{padding:0 16px 14px;font-size:13px;line-height:1.6;color:#1a1a1a;white-space:pre-line;}
+    .li-ad-footer{border-top:1px solid #e0e0e0;padding:10px 16px;display:flex;align-items:center;justify-content:space-between;}
+    .li-ad-cta{padding:7px 16px;border-radius:4px;font-size:13px;font-weight:700;color:#0A66C2;border:1.5px solid #0A66C2;background:#fff;cursor:default;}
+    .li-ad-tags{display:flex;flex-wrap:wrap;gap:4px;padding:0 16px 12px;}
+    .li-ad-group{margin-bottom:24px;}
+    .li-ad-group-header{padding:14px 18px;border-radius:var(--r-md) var(--r-md) 0 0;margin-bottom:1px;}
+    .li-ad-group-header.green{background:var(--green-soft);border:1px solid rgba(29,158,117,0.2);}
+    .li-ad-group-header.accent{background:var(--accent-soft);border:1px solid rgba(183,79,42,0.2);}
+    .li-ad-group-header.purple{background:var(--purple-soft);border:1px solid rgba(83,74,183,0.2);}
+    .li-ad-group-header.gold{background:var(--gold-soft);border:1px solid rgba(213,155,49,0.2);}
+    .li-ad-group-header.muted{background:rgba(37,26,23,0.04);border:1px solid var(--line);}
+    .li-ad-group-title{font-size:15px;font-weight:800;letter-spacing:-0.02em;}
+    .li-ad-group-title.green{color:var(--teal);}
+    .li-ad-group-title.accent{color:var(--accent);}
+    .li-ad-group-title.purple{color:var(--purple);}
+    .li-ad-group-title.gold{color:#855a0f;}
+    .li-ad-group-title.muted{color:var(--ink);}
+    .li-ad-group-meta{font-size:12px;color:var(--muted);margin-top:3px;display:flex;gap:10px;flex-wrap:wrap;}
+    .li-ad-analysis{padding:12px 16px;background:rgba(10,102,194,0.04);border:1px solid rgba(10,102,194,0.12);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);}
+    .li-ad-analysis-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#0A66C2;margin-bottom:6px;}
+    .li-ads-scroll{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin:12px 0;}
+
+    /* Meta Ad card (simulated feed) */
+    .meta-ad-card{border:1px solid #dddfe2;border-radius:8px;background:#fff;overflow:hidden;display:flex;flex-direction:column;}
+    .meta-ad-header{display:flex;align-items:center;gap:10px;padding:12px 12px 8px;}
+    .meta-ad-avatar{width:40px;height:40px;border-radius:50%;object-fit:contain;background:#f0f2f5;border:1px solid #dddfe2;padding:4px;flex-shrink:0;}
+    .meta-ad-company{flex:1;min-width:0;}
+    .meta-ad-company-name{font-size:13px;font-weight:700;color:#050505;line-height:1.2;}
+    .meta-ad-promo{font-size:11px;color:#65676B;display:flex;align-items:center;gap:4px;margin-top:1px;}
+    .meta-ad-copy{padding:0 12px 12px;font-size:13px;line-height:1.6;color:#050505;white-space:pre-line;}
+    .meta-ad-img-placeholder{height:8px;background:linear-gradient(90deg,rgba(0,129,251,0.15),rgba(0,129,251,0.05));margin:0 0 2px;}
+    .meta-ad-footer{border-top:1px solid #dddfe2;padding:8px 12px;display:flex;align-items:center;justify-content:space-between;}
+    .meta-ad-cta{padding:7px 14px;border-radius:6px;font-size:13px;font-weight:700;color:#fff;background:#0081FB;cursor:default;}
+    .meta-ad-group{margin-bottom:28px;}
+    .meta-ad-analysis{padding:12px 14px;background:rgba(0,129,251,0.05);border:1px solid rgba(0,129,251,0.15);border-radius:var(--r-sm);font-size:13px;line-height:1.6;color:var(--ink);margin-top:10px;}
+    .meta-ad-analysis-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#0081FB;margin-bottom:5px;}
+    .meta-ads-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:16px 0;}
 
     /* KPI card */
     .kpi-card{padding:18px;border-radius:var(--r-md);background:rgba(37,26,23,0.03);text-align:center;}
@@ -672,6 +721,38 @@ function renderLinkedIn() {
   `;
 }
 
+function renderMetaAdCard(ad) {
+  const categoryColors = {
+    purple: '#534AB7', accent: '#b74f2a', green: '#1D9E75',
+    gold: '#d59b31', teal: '#0F6E56', muted: '#6e5a54'
+  };
+  const catColor = categoryColors[ad.categoryColor] || '#6e5a54';
+  return `
+    <div style="display:flex;flex-direction:column;gap:10px;">
+      <div class="meta-ad-card">
+        <div class="meta-ad-header">
+          <img src="logo-develon.png" class="meta-ad-avatar" alt="DEVELON Chile">
+          <div class="meta-ad-company">
+            <div class="meta-ad-company-name">DEVELON Chile</div>
+            <div class="meta-ad-promo">Publicidad · 🌐</div>
+          </div>
+          <span style="padding:3px 9px;border-radius:999px;font-size:11px;font-weight:700;color:${catColor};background:${catColor}18;white-space:nowrap;">${ad.category}</span>
+        </div>
+        <div class="meta-ad-copy">${ad.copy}</div>
+        <div class="meta-ad-img-placeholder"></div>
+        <div class="meta-ad-footer">
+          <div style="font-size:11px;color:#65676B;">${ad.platform}</div>
+          <span class="meta-ad-cta">${ad.cta}</span>
+        </div>
+      </div>
+      <div class="meta-ad-analysis">
+        <div class="meta-ad-analysis-label">📊 Análisis estratégico</div>
+        ${ad.analysis}
+      </div>
+    </div>
+  `;
+}
+
 function renderMetaAds() {
   const ma = DATA.metaAds;
   const b = ma.brands[0];
@@ -682,12 +763,13 @@ function renderMetaAds() {
       </div>
       <div>
         <h2>Meta Ads · Facebook & Instagram</h2>
-        <p>Publicidad paga · Estrategia de anuncios · Creatividades</p>
+        <p>Publicidad paga · Creatividades reales · Análisis estratégico</p>
       </div>
     </div>
 
-    <div class="card meta-ads-brand has-ads" style="margin-bottom:14px;">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+    <!-- Brand header -->
+    <div class="card meta-ads-brand has-ads" style="margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <img src="${b.logo}" class="brand-logo lg" alt="${b.name}">
         <div>
           <div style="font-weight:700;font-size:16px;">${b.name}</div>
@@ -700,13 +782,24 @@ function renderMetaAds() {
           </span>
         </div>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:14px;">${b.summary}</p>
+      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-top:14px;">${b.summary}</p>
+    </div>
+
+    <!-- Real ad cards -->
+    <div style="margin-bottom:10px;">
+      <h3 style="margin-bottom:4px;">Anuncios reales de DEVELON Chile en Meta</h3>
+      <p style="font-size:13px;color:var(--muted);margin-bottom:16px;">Contenido extraído de la biblioteca de anuncios de Meta y publicaciones públicas de Facebook. Cada tarjeta muestra el anuncio real con análisis estratégico.</p>
+    </div>
+    <div class="meta-ads-grid">
+      ${b.ads.map(ad => renderMetaAdCard(ad)).join('')}
+    </div>
+
+    <!-- Strategy notes -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:12px;">Notas estratégicas · Meta Ads</h3>
       <ul class="meta-ads-notes">
         ${b.strategyNotes.map(n => `<li>${n}</li>`).join('')}
       </ul>
-      <a href="${b.adLibraryUrl}" target="_blank" class="meta-ads-cta-btn">
-        Ver anuncios en Meta Ad Library →
-      </a>
     </div>
 
     <!-- Conclusions + Recs -->
@@ -736,6 +829,51 @@ function renderMetaAds() {
   `;
 }
 
+function renderLiAdCard(ad) {
+  return `
+    <div class="li-ad-card">
+      <div class="li-ad-header">
+        <img src="logo-develon.png" class="li-ad-avatar" alt="HD Construction Equipment Chile">
+        <div class="li-ad-company">
+          <div class="li-ad-company-name">HD Construction Equipment Chile</div>
+          <div class="li-ad-promo"></div>
+        </div>
+      </div>
+      <div class="li-ad-copy">${ad.copy}</div>
+      <div class="li-ad-tags">
+        ${ad.tags.map(t => `<span style="font-size:11px;padding:2px 8px;border-radius:999px;background:rgba(10,102,194,0.08);color:#0A66C2;font-weight:600;">${t}</span>`).join('')}
+      </div>
+      <div class="li-ad-footer">
+        <div style="font-size:11px;color:#666;">ID: ${ad.id}</div>
+        <span class="li-ad-cta">${ad.cta}</span>
+      </div>
+    </div>
+  `;
+}
+
+function renderLiAdGroup(group) {
+  return `
+    <div class="li-ad-group">
+      <div class="li-ad-group-header ${group.color}">
+        <div class="li-ad-group-title ${group.color}">${group.category}</div>
+        <div class="li-ad-group-meta">
+          <span>📋 ${group.adCount} anuncios</span>
+          <span>🎯 ${group.objective}</span>
+          <span>🖼️ ${group.format}</span>
+          <span>🪝 Hook: ${group.hook}</span>
+        </div>
+      </div>
+      <div class="li-ads-scroll">
+        ${group.ads.map(ad => renderLiAdCard(ad)).join('')}
+      </div>
+      <div class="li-ad-analysis">
+        <div class="li-ad-analysis-label">📊 Análisis estratégico del grupo</div>
+        ${group.analysis}
+      </div>
+    </div>
+  `;
+}
+
 function renderLinkedInAds() {
   const la = DATA.linkedinAds;
   const b = la.brands[0];
@@ -746,12 +884,13 @@ function renderLinkedInAds() {
       </div>
       <div>
         <h2>LinkedIn Ads · HD Construction Equipment Chile</h2>
-        <p>Publicidad B2B paga · Targeting profesional · Lead generation</p>
+        <p>${b.totalAds} anuncios reales · Grupos estratégicos · Análisis de creatividades</p>
       </div>
     </div>
 
-    <div class="card meta-ads-brand has-ads" style="margin-bottom:14px;border-color:rgba(10,102,194,0.2);">
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;flex-wrap:wrap;">
+    <!-- Brand header -->
+    <div class="card" style="margin-bottom:20px;border-color:rgba(10,102,194,0.2);">
+      <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
         <img src="${b.logo}" class="brand-logo lg" alt="${b.name}">
         <div>
           <div style="font-weight:700;font-size:16px;">${b.name}</div>
@@ -760,38 +899,37 @@ function renderLinkedInAds() {
         <div style="margin-left:auto;">
           <span class="meta-ads-status active" style="color:#0A66C2;background:rgba(10,102,194,0.08);">
             <span class="meta-ads-status-dot" style="background:#0A66C2;box-shadow:0 0 6px rgba(10,102,194,0.4);"></span>
-            Anuncios activos
+            ${b.totalAds} anuncios activos
           </span>
         </div>
       </div>
-      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-bottom:14px;">${b.summary}</p>
-
-      <!-- Ad categories -->
-      <div style="margin-bottom:14px;">
-        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Categorías de anuncios identificadas</div>
-        ${b.adCategories.map(cat => `
-          <div class="ad-cat">
-            <div class="ad-cat-top">
-              <h4>${cat.category}</h4>
-              <span class="format-pill">${cat.format}</span>
-              <span class="obj-pill">${cat.objective}</span>
-            </div>
-            <p>${cat.description}</p>
-          </div>
-        `).join('')}
+      <p style="font-size:14px;line-height:1.6;color:var(--muted);margin-top:14px;margin-bottom:16px;">${b.summary}</p>
+      <!-- Volume by group -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;">
+        ${b.adGroups.map(g => {
+          const colors = {green:'var(--teal)',accent:'var(--accent)',purple:'var(--purple)',gold:'#855a0f',muted:'var(--muted)'};
+          const bgs = {green:'var(--green-soft)',accent:'var(--accent-soft)',purple:'var(--purple-soft)',gold:'var(--gold-soft)',muted:'rgba(37,26,23,0.04)'};
+          return `<div style="padding:10px 14px;border-radius:var(--r-sm);background:${bgs[g.color]};color:${colors[g.color]};">
+            <div style="font-size:22px;font-weight:800;">${g.adCount}</div>
+            <div style="font-size:11px;line-height:1.3;margin-top:2px;">${g.category.split('—')[0].trim()}</div>
+          </div>`;
+        }).join('')}
       </div>
+    </div>
 
-      <div style="margin-bottom:14px;">
-        <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:10px;">Notas estratégicas</div>
-        <ul class="meta-ads-notes" style="">
-          ${b.strategyNotes.map(n => `<li style="">${n}</li>`).join('')}
-        </ul>
-      </div>
-      <style>.meta-ads-notes.li-style li::before{background:#0A66C2;}</style>
+    <!-- All ad groups with real ads -->
+    <div style="margin-bottom:12px;">
+      <h3>Anuncios reales por grupo estratégico</h3>
+      <p style="font-size:13px;color:var(--muted);margin-top:4px;">Creatividades extraídas directamente de la Biblioteca de Anuncios de LinkedIn. Cada grupo incluye las variantes reales y su análisis.</p>
+    </div>
+    ${b.adGroups.map(g => renderLiAdGroup(g)).join('')}
 
-      <a href="${b.adLibraryUrl}" target="_blank" class="li-ads-cta-btn">
-        Ver anuncios en LinkedIn Ad Library →
-      </a>
+    <!-- Strategy notes -->
+    <div class="card" style="margin-bottom:14px;">
+      <h3 style="margin-bottom:12px;">Notas estratégicas · LinkedIn Ads</h3>
+      <ul class="meta-ads-notes li-notes">
+        ${b.strategyNotes.map(n => `<li>${n}</li>`).join('')}
+      </ul>
     </div>
 
     <!-- Conclusions + Recs -->

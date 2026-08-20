@@ -314,11 +314,63 @@
         "hasAds": true,
         "adLibraryUrl": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=CL&is_targeted_country=false&media_type=all&search_type=page&view_all_page_id=1474973926117560",
         "pageId": "1474973926117560",
-        "summary": "DEVELON Chile tiene anuncios activos en Meta (Facebook e Instagram) con una estrategia que mezcla contenido de producto directo con storytelling emocional. La página DevelonChile opera de forma activa con posts orgánicos y campañas pagadas orientadas al mercado chileno de construcción y minería.",
+        "summary": "DEVELON Chile tiene anuncios activos en Meta (Facebook e Instagram) con una estrategia que mezcla storytelling emocional, lanzamientos de producto y contenido de oportunidad. La página DevelonChile combina publicaciones orgánicas con pauta orientada al mercado chileno de construcción y minería.",
+        "ads": [
+          {
+            "id": "meta-001",
+            "category": "Storytelling emocional",
+            "categoryColor": "purple",
+            "format": "Imagen",
+            "platform": "Facebook + Instagram",
+            "copy": "El conejito de Pascua pasó por DEVELON Chile y dejó algo más que chocolate. 😮🔑\n\nPorque algunos tesoros solo son visibles para quienes saben mirar más allá.\n\nDonde otros ven tierra, nosotros encontramos oportunidades. ✨\n\n#Develon #DevelonChile",
+            "cta": "Ver más",
+            "analysis": "Metáfora estacional de alto nivel: vincula la búsqueda del huevo de Pascua con la propuesta de valor de DEVELON ('donde otros ven tierra, encontramos oportunidades'). Funciona como branding puro — no vende producto, vende perspectiva y mentalidad. Muy efectivo para top of funnel y engagement orgánico amplificado con pauta."
+          },
+          {
+            "id": "meta-002",
+            "category": "Lanzamiento de producto",
+            "categoryColor": "accent",
+            "format": "Video",
+            "platform": "Facebook + Instagram",
+            "copy": "Alerta de Potencia 🔶\n\nEl Camión Articulado DA45-7 de DEVELON está diseñado para condiciones extremas — porque en minería y construcción, la potencia no negocia.\n\n45 toneladas de capacidad. Motor Cummins QSX15. Sistema de tracción 6×6.\n\n¿Tu proyecto necesita más potencia? Contáctanos. 💪\n\n#DA45 #DevelonChile #MaquinariaHeavy",
+            "cta": "Contáctanos",
+            "analysis": "Copy técnico de conversión para audiencias en etapa de consideración. El uso de especificaciones concretas (45 toneladas, Motor Cummins QSX15, 6×6) demuestra profundidad técnica y filtra audiencias no calificadas — solo quien entiende esos datos sigue leyendo. Targeting probable: gerentes de operaciones en minería."
+          },
+          {
+            "id": "meta-003",
+            "category": "Expansión geográfica",
+            "categoryColor": "green",
+            "format": "Imagen",
+            "platform": "Facebook + Instagram (geo-segmentado Antofagasta)",
+            "copy": "¡DEVELON Chile llega al norte! 🧡\n\nAbrimos nuestra nueva sucursal en Antofagasta: Av. Pedro Aguirre Cerda 7723.\n\nMás de 1.200 m² de taller, bodega de repuestos y el mejor equipo técnico de la zona.\n\nParque de maquinaria, entrega técnica en terreno y postventa local. Porque la distancia no puede ser un obstáculo para tu operación.\n\n#DEVELON #Antofagasta #SucursalNorte",
+            "cta": "Ver ubicación",
+            "analysis": "Anuncio de apertura geo-segmentado a la Región de Antofagasta y norte de Chile. El énfasis en '1.200 m² de taller' y 'postventa local' responde a la objeción más frecuente en el norte minero: el tiempo de respuesta de servicio técnico. Altamente relevante para el momento de agosto 2026."
+          },
+          {
+            "id": "meta-004",
+            "category": "Posicionamiento técnico",
+            "categoryColor": "teal",
+            "format": "Video",
+            "platform": "Facebook + Instagram",
+            "copy": "Entrega técnica DEVELON en Mina Los Bronces. ⛏️\n\nCada máquina DEVELON llega con el acompañamiento técnico que tu operación necesita desde el primer día.\n\nAsí se ve el inicio de una larga relación. 🤝\n\n#DEVELON #MinaLosBronces #MaquinariaMinera",
+            "cta": "Conocer más",
+            "analysis": "Contenido de validación social B2B: mostrar una entrega en Mina Los Bronces (una de las minas más reconocidas de Chile) es una prueba social de alto valor. El copy 'así se ve el inicio de una larga relación' transforma una entrega técnica en un mensaje de compromiso de largo plazo — fundamental para compradores que evalúan el postventa tanto como el producto."
+          },
+          {
+            "id": "meta-005",
+            "category": "Comunidad e identidad",
+            "categoryColor": "gold",
+            "format": "Imagen",
+            "platform": "Facebook + Instagram",
+            "copy": "Para los que empezaron soñando con las máquinas grandes. 🧡\n\nNo importa si eres operador, mecánico, gerente de flota o simplemente alguien que ama la maquinaria pesada — este contenido es para ti.\n\nBienvenido a la familia DEVELON Chile. 💪\n\n#DevelonChile #MaquinariaHeavy #ComunidadDevelon",
+            "cta": "Ver más",
+            "analysis": "Anuncio de comunidad y pertenencia — no vende producto, recluta identidad. Al interpelar al 'operador, mecánico, gerente de flota' por separado, amplía el alcance a diferentes roles de la audiencia. Estrategia correcta para construir audiencias de remarketing: quien interactúa con este ad ya es un prospecto calificado."
+          }
+        ],
         "strategyNotes": [
           "Storytelling metafórico activo: el post de Pascua ('donde otros ven tierra, nosotros encontramos oportunidades') muestra una estrategia de contenido que conecta emocionalmente antes de vender.",
-          "Contenido de producto directo: posts como 'Alerta de Potencia — Camión Articulado DA45-7' se enfocan en las capacidades técnicas para audiencias que ya están en consideración de compra.",
-          "Targeting probable: propietarios y gerentes de empresas constructoras, mineras y forestales en Chile, con radio geográfico amplio dada la presencia nacional en 5 sucursales.",
+          "Contenido de producto directo: anuncios como 'Alerta de Potencia — Camión Articulado DA45-7' usan especificaciones técnicas concretas para audiencias en etapa de consideración.",
+          "Targeting probable: propietarios y gerentes de empresas constructoras, mineras y forestales en Chile, con campañas geo-segmentadas para Antofagasta en el lanzamiento de la sucursal.",
           "El uso simultáneo de Meta orgánico + pagado indica una estrategia integrada: el orgánico construye comunidad, los ads aceleran el alcance a nuevos prospectos.",
           "Oportunidad de remarketing: con 13.276+ seguidores en Instagram, la audiencia personalizada de Meta puede ser altamente efectiva para retargeting de visitas al sitio web develon-ce.cl."
         ]
@@ -373,34 +425,197 @@
         "name": "DEVELON Chile",
         "logo": "logo-develon.png",
         "hasAds": true,
-        "totalAds": null,
+        "totalAds": 109,
         "adLibraryUrl": "https://www.linkedin.com/ad-library/search?accountOwner=HD+Construction+Equipment+Chile",
         "advertiserName": "HD Construction Equipment Chile",
-        "summary": "HD Construction Equipment Chile aparece en la biblioteca de anuncios de LinkedIn, con presencia paga en la plataforma B2B más relevante para el sector industrial. Sus anuncios apuntan a decisores de compra en construcción y minería, aprovechando el targeting profesional único de LinkedIn.",
-        "adCategories": [
+        "summary": "HD Construction Equipment Chile tiene 109 anuncios en la biblioteca de LinkedIn Ads — una inversión paga significativa en la plataforma B2B más relevante para maquinaria industrial. Los anuncios cubren cinco líneas temáticas distintas: mantenimiento, miniexcavadoras, grúas horquilla, repuestos y hitos corporativos, mostrando una estrategia full-funnel que abarca desde awareness hasta conversión directa.",
+        "adGroups": [
           {
-            "category": "Branding de marca y posicionamiento",
-            "description": "Anuncios que comunican la propuesta de valor de DEVELON Chile — calidad coreana, postventa, expertise técnico — con el objetivo de construir reconocimiento de marca entre compradores potenciales que aún no están en modo de compra activa.",
+            "id": "grupo-mantenimiento",
+            "category": "Mantenimiento y continuidad operacional",
+            "color": "green",
+            "objective": "Awareness + Retención",
             "format": "Imagen",
-            "objective": "Branding institucional"
+            "adCount": 4,
+            "hook": "Costo de inacción",
+            "analysis": "Este grupo usa la psicología del riesgo: en lugar de hablar del producto, habla de lo que le cuesta al cliente NO mantener sus equipos. El hook 'Una detención cuesta mucho más que un buen mantenimiento' activa el dolor antes de ofrecer la solución. Es la estrategia más sofisticada de toda la cuenta — posiciona a DEVELON como socio de continuidad, no solo vendedor.",
+            "ads": [
+              {
+                "id": "1544248016",
+                "copy": "Una detención cuesta mucho más que un buen mantenimiento.\n\nDetrás de la continuidad operacional hay decisiones que parecen pequeñas pero marcan la diferencia en productividad y costos.\n\nConoce nuestros planes de mantención DEVELON.",
+                "cta": "Ver detalles",
+                "tags": ["Mantenimiento", "Continuidad operacional"]
+              },
+              {
+                "id": "1442442183",
+                "copy": "Una máquina puede ser potente. Pero el verdadero respaldo está en quienes la conocen, la mantienen y están ahí cuando más los necesitas.\n\nEn DEVELON Chile, el postventa no es un extra — es la base del negocio.",
+                "cta": "Más información",
+                "tags": ["Postventa", "Servicio técnico"]
+              },
+              {
+                "id": "1544502226",
+                "copy": "⚙️ La productividad también depende de una mantención adecuada.\n\nDurante julio, DEVELON Chile ofrece condiciones especiales en planes de mantención preventiva para tu flota. Protege tu inversión y mantén tus equipos en óptimas condiciones.\n\n¡Contáctanos hoy!",
+                "cta": "Contáctanos",
+                "tags": ["Promo julio", "Mantención preventiva"]
+              },
+              {
+                "id": "1436515183",
+                "copy": "⚙️ Que tu batería no pierda energía.\n\nDurante julio, los clientes que compren a través de My DEVELON podrán acceder a un descuento exclusivo en baterías originales. Mantén tus equipos en marcha con repuestos que conocen tu máquina.\n\n¡Revisa las condiciones!",
+                "cta": "Revisar condiciones",
+                "tags": ["Promo julio", "My DEVELON", "Repuestos"]
+              }
+            ]
           },
           {
-            "category": "Hitos corporativos (inauguraciones, ferias)",
-            "description": "Amplificación pagada de noticias como la apertura de Antofagasta o la participación en CONEXPO 2026, dirigida a audiencias de ingenieros, gerentes de obras y jefes de flota en los sectores target.",
-            "format": "Video",
-            "objective": "Posicionamiento de propuesta de valor"
+            "id": "grupo-miniexcavadoras",
+            "category": "Miniexcavadoras — Conversión directa",
+            "color": "accent",
+            "objective": "Lead Generation · Conversión",
+            "format": "Imagen",
+            "adCount": 5,
+            "hook": "Pregunta + urgencia + precio ancla",
+            "analysis": "El grupo más agresivo comercialmente. Usa preguntas directas como hooks ('¿Buscas máxima durabilidad?', '¿Espacios reducidos?'), bono concreto de hasta USD 4.000 como diferenciador y precio ancla desde USD 20.000. La variedad de variantes (A/B testing activo) sobre el mismo modelo DX27Z-7 / DX35Z-7 sugiere que están optimizando creatividades para maximizar CTR y leads.",
+            "ads": [
+              {
+                "id": "1544502216",
+                "copy": "¿Buscas máxima durabilidad?\n\nLas miniexcavadoras DEVELON ofrecen calidad medida en años de operación.\n\n✅ Bono de hasta USD 4.000\n✅ Entrega inmediata\n✅ Financiamiento disponible\n\n¡Contáctanos y cotiza hoy!",
+                "cta": "Contáctanos",
+                "tags": ["Miniexcavadoras", "Bono USD 4.000", "Entrega inmediata"]
+              },
+              {
+                "id": "1470984683",
+                "copy": "¿Espacios reducidos? ¡Ningún problema!\n\nLas miniexcavadoras DEVELON DX35Z-7 y DX27Z-7 combinan tamaño compacto y máxima potencia para trabajar donde otros no pueden.\n\nMás potencia en menos espacio.\n\nCotiza hoy tu miniexcavadora DEVELON.",
+                "cta": "Cotizar",
+                "tags": ["DX35Z-7", "DX27Z-7", "Compacta"]
+              },
+              {
+                "id": "1442422163",
+                "copy": "¿Buscas máxima durabilidad?\n\nLas miniexcavadoras DEVELON están diseñadas para operar en las condiciones más exigentes.\n\nUnidades disponibles desde USD 20.000 + IVA\n\n¡Cotiza ahora con nosotros!",
+                "cta": "Cotiza ahora",
+                "tags": ["Miniexcavadoras", "Desde USD 20.000"]
+              },
+              {
+                "id": "1436484943",
+                "copy": "Miniexcavadoras DEVELON con bono de fábrica de hasta USD 4.000\n\nActualmente, las miniexcavadoras DEVELON DX27Z-7M y DX35Z-7 están disponibles con condiciones especiales de fábrica. Stock limitado — aprovecha esta oportunidad antes de que se agote.\n\n¡Solicita tu cotización!",
+                "cta": "Solicitar cotización",
+                "tags": ["DX27Z-7M", "DX35Z-7", "Stock limitado"]
+              },
+              {
+                "id": "1436645943",
+                "copy": "Miniexcavadoras DEVELON: calidad comprobada en obra.\n\nDesde operaciones en espacios reducidos hasta trabajos de demolición de precisión, la línea mini de DEVELON tiene el equipo correcto para cada desafío.\n\nContáctanos y encuentra tu modelo ideal.",
+                "cta": "Contactar",
+                "tags": ["Miniexcavadoras", "Versatilidad"]
+              }
+            ]
           },
           {
-            "category": "Generación de leads — Contacto comercial",
-            "description": "Anuncios con formulario de contacto integrado (LinkedIn Lead Gen Forms) para capturar datos de potenciales compradores interesados en cotizaciones, demos o visitas comerciales. Alto CPL pero leads de alta calidad.",
+            "id": "grupo-gruas",
+            "category": "Grúas Horquilla — Precio y urgencia",
+            "color": "purple",
+            "objective": "Conversión · Oportunidad de stock",
             "format": "Imagen",
-            "objective": "Generación de leads"
+            "adCount": 3,
+            "hook": "Precio ancla + urgencia de stock",
+            "analysis": "Las grúas horquilla son el segundo producto más publicitado. El mensaje central 'desde USD 20.000, últimas unidades' combina un precio ancla concreto con urgencia de escasez — una de las palancas de conversión más efectivas en ventas industriales. El anuncio Cyber aprovecha una fecha estacional relevante para el mercado chileno, mostrando que la cuenta adapta su estrategia al calendario comercial.",
+            "ads": [
+              {
+                "id": "1436495163",
+                "copy": "¿Tu operación necesita potencia sin fallos? 🏗️\n\nMaximiza el rendimiento de tu negocio con la resistencia de las grúas horquilla DEVELON — diseñadas para las operaciones más exigentes.\n\nGrúas DEVELON desde USD 20.000\nÚltimas unidades disponibles + IVA\n\n¡Contáctanos!",
+                "cta": "Contáctanos",
+                "tags": ["Grúas Horquilla", "Desde USD 20.000", "Últimas unidades"]
+              },
+              {
+                "id": "1442620593",
+                "copy": "Grúas Horquilla DEVELON desde USD 20.000\n\nÚltimas unidades disponibles + IVA.\n\n¿Necesitas mayor capacidad de carga para tu operación? Nuestras grúas horquilla están listas para entrega inmediata.\n\n¡Contáctanos!",
+                "cta": "Contáctanos",
+                "tags": ["Grúas Horquilla", "Entrega inmediata"]
+              },
+              {
+                "id": "1442569093",
+                "copy": "⚡ Cyber en DEVELON Chile ya está disponible.\n\nCondiciones especiales en grúas horquilla seleccionadas durante el Cyber. No dejes pasar esta oportunidad para equipar tu operación con maquinaria de calidad a un precio inmejorable.\n\n¡Revisa nuestras ofertas!",
+                "cta": "Ver ofertas",
+                "tags": ["Cyber", "Oferta estacional", "Grúas Horquilla"]
+              }
+            ]
+          },
+          {
+            "id": "grupo-repuestos",
+            "category": "Repuestos originales — Descuentos por tiempo limitado",
+            "color": "gold",
+            "objective": "Conversión · Upsell base instalada",
+            "format": "Imagen",
+            "adCount": 3,
+            "hook": "Porcentaje de descuento + tiempo limitado",
+            "analysis": "Los anuncios de repuestos apuntan a la base instalada de clientes DEVELON — quienes ya tienen equipos y necesitan mantenerlos. El descuento del 45% en filtros es el dato más llamativo del copy y funciona como anzuelo. Esta categoría es estratégicamente inteligente: los clientes de repuestos son los más leales y tienen el menor costo de conversión. Tres variantes del mismo anuncio confirman A/B testing activo.",
+            "ads": [
+              {
+                "id": "1436475823",
+                "copy": "¿Quieres alargar la vida de tu máquina?\n\nDurante julio, aprovecha descuentos imperdibles en repuestos originales DEVELON:\n\n🔧 Hasta 45% de descuento en filtros\n🛢️ 15% de descuento en aceites\n\n¡Cotiza tus repuestos!\nPromo de julio DEVELON. ¡Consúltanos!",
+                "cta": "Consultar",
+                "tags": ["Repuestos", "Promo julio", "45% filtros"]
+              },
+              {
+                "id": "1442569103",
+                "copy": "Los repuestos originales DEVELON están diseñados específicamente para tus equipos — no arriesgues el rendimiento con alternativas genéricas.\n\nDurante julio: 45% en filtros · 15% en aceites\n\n¡Cotiza ahora y mantén tu flota en óptimas condiciones!",
+                "cta": "Cotizar",
+                "tags": ["Repuestos originales", "Julio", "Flota"]
+              },
+              {
+                "id": "1471025013",
+                "copy": "Promo Julio DEVELON Chile: repuestos originales con descuento.\n\n✅ Filtros: hasta 45% off\n✅ Aceites: 15% off\n✅ Asesoría técnica incluida\n\nProtege la inversión de tu flota con repuestos que conocen cada pieza de tu máquina.\n\n¡Contáctanos hoy!",
+                "cta": "Contáctanos",
+                "tags": ["Repuestos", "Asesoría técnica", "Descuento"]
+              }
+            ]
+          },
+          {
+            "id": "grupo-branding",
+            "category": "Branding y posicionamiento emocional",
+            "color": "muted",
+            "objective": "Awareness · Top of mind",
+            "format": "Imagen / Video",
+            "adCount": 5,
+            "hook": "Storytelling visual + identidad de marca",
+            "analysis": "El grupo de branding muestra a DEVELON en su forma más editorial: sin precio, sin CTA de venta directa, solo posicionamiento. 'Para quienes saben de máquinas, probablemente no hacen falta muchas pistas' es un copy de identidad — habla directamente al entendido, creando pertenencia. Los anuncios de hitos (Antofagasta, Mina Los Bronces) funcionan como PR amplificado: convierten noticias en contenido pagado con alcance preciso.",
+            "ads": [
+              {
+                "id": "1442398193",
+                "copy": "El trabajo en terreno también deja postales que representan la esencia de DEVELON: potencia, presencia y rendimiento operacional.\n\nAsí luce el trabajo bien hecho. 💪",
+                "cta": "Más información",
+                "tags": ["Branding", "Terreno", "Identidad"]
+              },
+              {
+                "id": "1544257666",
+                "copy": "👀 Para quienes saben de máquinas, probablemente no hacen falta muchas pistas.\n\n#DEVELON #DevelonChile #MaquinariaHeavy",
+                "cta": "Ver más",
+                "tags": ["Branding", "Identidad", "Comunidad"]
+              },
+              {
+                "id": "1436505173",
+                "copy": "🧡 La pieza que más de algún fanático de las máquinas habría soñado tener cuando pequeño.\n\nSe acerca el Día del Niño y, por supuesto, en DEVELON Chile lo celebramos a nuestra manera. ¿Adivinas de qué se trata?",
+                "cta": "Descubrir",
+                "tags": ["Día del Niño", "Estacional", "Comunidad"]
+              },
+              {
+                "id": "1436444313",
+                "copy": "Continuidad operacional, sin interrupciones. ⏱️⚡\n\nCon la apertura de nuestra nueva sucursal DEVELON en Antofagasta, fortalecemos nuestra red de servicio en el norte de Chile. Más cerca de tus equipos, más rápido en tu respuesta.\n\n¡Visítanos en Av. Pedro Aguirre Cerda 7723!",
+                "cta": "Ver ubicación",
+                "tags": ["Antofagasta", "Nueva sucursal", "Hito corporativo"]
+              },
+              {
+                "id": "1447435433",
+                "copy": "⛏️ Entrega técnica DEVELON en Mina Los Bronces.\n\nComo parte de la puesta en marcha de la excavadora DEVELON DX1000LC-7, nuestro equipo técnico realizó la entrega oficial en uno de los proyectos mineros más importantes de Chile. Así se hace el acompañamiento real al cliente.",
+                "cta": "Conocer más",
+                "tags": ["Minería", "DX1000LC-7", "Los Bronces", "Hito"]
+              }
+            ]
           }
         ],
         "strategyNotes": [
           "LinkedIn permite segmentar por cargo (Gerente de Operaciones, Director de Proyectos), industria (Minería, Construcción, Logística) y tamaño de empresa — targeting ideal para venta de maquinaria pesada.",
           "El Lead Gen Form nativo de LinkedIn elimina la fricción de redirigir a una web externa, capturando datos pre-llenados del perfil del usuario.",
           "La inversión en LinkedIn Ads tiene sentido estratégico para DEVELON: el costo por lead es alto, pero el ticket de una excavadora o camión articulado justifica ampliamente el CAC.",
+          "A/B testing activo: múltiples variantes del mismo mensaje (miniexcavadoras, repuestos) confirman una cuenta gestionada activamente con optimización creativa.",
           "Oportunidad de retargeting: crear audiencias de LinkedIn Matched con la base de datos de clientes actuales y prospectos del CRM de DEVELON."
         ]
       }
